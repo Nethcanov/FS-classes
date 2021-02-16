@@ -3,7 +3,7 @@
 Note: BEFORE tackling each question below,
 write related tests in the test file.
 
-1. Create a class called "Poodle" that extends
+1. done - Create a class called "Poodle" that extends
    the dog class.
 2. Update the breed property to "poodle".
 3. Create a new method called "lifetimeHaircuts" that
@@ -14,8 +14,8 @@ write related tests in the test file.
 
 ---------------------- */
 
-const Dog = require('./dog');
+const Dog = require("./dog");
 
-class Poodle {}
+class Poodle extends Dog {}
 
 module.exports = Poodle;
