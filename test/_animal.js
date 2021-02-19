@@ -8,7 +8,7 @@ describe("Animals", () => {
   beforeEach(() => {
     animal = new Animal();
   });
-  //beforeEach is a hook - function called automatically before each test (not called by us)
+
   describe("The Animal class", () => {
     it("should be a class", () => {
       expect(isClass(Animal)).to.be.true;

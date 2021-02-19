@@ -23,19 +23,18 @@ class Dog extends Animal {
   constructor(name, age, legs, sound, sticks, breed) {
     super(name, age, legs, sound);
     this.name = name;
-    this.age = 1;
+    this.age = 0;
     this.legs = 4;
     this.sound = "woof!";
     this.sticks = 0;
     this.breed = "breed";
   }
   getOlder() {
-    this.age += 7;
+    this.age = this.age + 7;
     return this.age;
   }
   fetch() {
-    this.sticks++;
-    return this.sticks;
+    return this.sticks++;
   }
 }
 

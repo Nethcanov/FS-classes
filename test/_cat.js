@@ -6,7 +6,9 @@ let cat = null;
 
 describe("Cat", () => {
   beforeEach(() => {
-    cat = new Cat();
+    cat = new Cat(); //can change the values here
+    cat.name = "Monkey";
+    cat.favoriteToy = "squeaky mouse";
   });
 
   describe("The Cat class", () => {
@@ -14,43 +16,58 @@ describe("Cat", () => {
       expect(isClass(Cat)).to.be.true;
     });
 
-    it("should have properties named name, age, legs, sound, favoriteToy", () => {
+    it("should have properties named name, age, legs, sound, favoriteToy, ornaments", () => {
       expect(cat.hasOwnProperty("name")).to.equal(true);
       expect(cat.hasOwnProperty("age")).to.equal(true);
-      expect(cat.hasOwnProperty("legs")).to.equal(true);
       expect(cat.hasOwnProperty("sound")).to.equal(true);
       expect(cat.hasOwnProperty("favoriteToy")).to.equal(true);
+      expect(cat.hasOwnProperty("attacks")).to.equal(true);
     });
 
-    it("should have have preset properties for sound and legs", () => {
+    it("should have have preset properties for name, sound, legs, favoriteToy and ", () => {
+      expect(cat.name).to.equal("Monkey");
       expect(cat.sound).to.equal("meow!");
-      expect(cat.legs).to.equal(4);
       expect(cat.favoriteToy).to.equal("squeaky mouse");
+      expect(cat.attacks).to.equal(1);
     });
   });
 
   //no speak method as it is just updating
 
-  xdescribe("The getOlder method", () => {
+  describe("The getOlder method", () => {
     it("should exist on the Cat prototype", () => {
       expect(Cat.prototype.getOlder).to.exist;
     });
 
     it("should increase the age when called", () => {
-      cat.getOlder();
-      cat.getOlder();
-      // cat.getOlder();
+      expect(cat.getOlder()).to.equal(15);
       expect(cat.getOlder()).to.equal(24);
+      expect(cat.getOlder()).to.equal(28);
     });
   });
 
-  describe("The toy method", () => {
+  describe("The buyOrnaments method", () => {
     it("should exist on the Cat prototype", () => {
-      expect(Cat.prototype.toy).to.exist;
+      expect(Cat.prototype.buyOrnaments).to.exist;
+    });
+
+    it("should return an answer when called", () => {
+      cat.attacks = 4;
+      expect(cat.buyOrnaments()).to.equal("Move ornaments to somewhere safe!");
+      cat.attacks = 6;
+      expect(cat.buyOrnaments()).to.equal("Buy some unbreakable ornaments!");
+    });
+  });
+
+  describe("The printToy method", () => {
+    it("should exist on the Cat prototype", () => {
+      expect(Cat.prototype.printToy).to.exist;
     });
 
     it("should return a sentence about the favorite toy", () => {
-      expect(cat.toy()).to.equal("The cat's favorite toy is a squeaky mouse.");
+      expect(cat.printToy()).to.equal(
+        "Monkey's favorite toy is a squeaky mouse."
+      );
     });
   });
 });

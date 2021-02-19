@@ -18,32 +18,36 @@ write related tests in the test file.
 const Animal = require("./animal");
 
 class Cat extends Animal {
-  constructor(name, age, legs, sound, favoriteToy) {
-    super(name, age, legs, sound);
+  constructor(name, age, sound, favoriteToy, attacks) {
+    super(name, age, sound);
     this.name = name;
     this.age = 1;
-    this.legs = 4;
     this.sound = "meow!";
-    this.favoriteToy = "squeaky mouse";
+    this.favoriteToy = favoriteToy;
+    this.attacks = 1;
   }
-  //final if does not work yet
+
   getOlder() {
-    let catYears = 0;
-
-    if ((this.age = 1)) {
-      catYears = 15;
+    if (this.age === 1) {
+      return (this.age += 14);
+    } else if (this.age === 15) {
+      return (this.age += 9);
+    } else {
+      return (this.age += 4);
     }
-    if ((this.age = 15)) {
-      catYears = 24;
-    }
-    // if(this.age >=24){
-    //    catYears = this.age + 2;
-    // }
-    return catYears;
   }
 
-  toy(favoriteToy) {
-    return `The cat's favorite toy is a ${this.favoriteToy}.`;
+  buyOrnaments() {
+    if (this.attacks <= 5) {
+      return "Move ornaments to somewhere safe!";
+    }
+    if (this.attacks > 5) {
+      return "Buy some unbreakable ornaments!";
+    }
+  }
+
+  printToy() {
+    return `${this.name}'s favorite toy is a ${this.favoriteToy}.`;
   }
 }
 

@@ -37,10 +37,9 @@ describe("Dog", () => {
     });
 
     it("should increase the age by 7 each time it is called", () => {
-      dog.getOlder(); //8
-      dog.getOlder(); //15
-      dog.getOlder(); //22
-      expect(dog.age).to.equal(22); //14
+      expect(dog.getOlder()).to.equal(7);
+      expect(dog.getOlder()).to.equal(14);
+      expect(dog.getOlder()).to.equal(21);
     });
   });
 
@@ -52,7 +51,7 @@ describe("Dog", () => {
     it("should increase the sticks count each time it is called", () => {
       dog.fetch();
       dog.fetch();
-      expect(dog.sticks).to.equal(2); //dog.name
+      expect(dog.fetch()).to.equal(2); //dog.name
     });
   });
 });
