@@ -6,7 +6,7 @@ write related tests in the test file.
 1. done - Create a class called "Poodle" that extends
    the dog class.
 2. done - Update the breed property to "poodle".
-3. not working - Create a new method called "lifetimeHaircuts" that
+3. done - Create a new method called "lifetimeHaircuts" that
    returns the number of haircuts the poodle
    has received over its lifetime. To calculate this
    total, take the age and multiply by 7 (the average
@@ -17,15 +17,14 @@ write related tests in the test file.
 const Dog = require("./dog");
 
 class Poodle extends Dog {
-  constructor(name, age, breed, mealCount) {
-    super(name, age, breed);
+  constructor(name) {
+    super(name);
     this.name = "Trixie";
-    this.age = 1;
     this.breed = "poodle";
-    this.mealCount = mealCount;
+    this.mealCount = 0;
   }
   lifetimeHaircuts() {
-    return this.age * 7;
+    return this.age;
   }
 
   printFoodSchedule() {

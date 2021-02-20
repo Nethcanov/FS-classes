@@ -14,10 +14,9 @@ describe("Animals", () => {
       expect(isClass(Animal)).to.be.true;
     });
 
-    it("should have properties named name, age, legs, and sound", () => {
+    it("should have properties named name, age, and sound", () => {
       expect(animal.hasOwnProperty("name")).to.equal(true);
       expect(animal.hasOwnProperty("age")).to.equal(true);
-      expect(animal.hasOwnProperty("legs")).to.equal(true);
       expect(animal.hasOwnProperty("sound")).to.equal(true);
     });
   });

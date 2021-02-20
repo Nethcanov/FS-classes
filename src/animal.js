@@ -3,7 +3,7 @@
 Note: BEFORE tackling each question below,
 read the tests in the test file.
 
-1. done - Add properties called "legs" and "sound".
+1. done - Add a property called "sound".
 2. done - Add a method called "getOlder" so that it increases
    the age by 1 whenever it is called and then 
    returns the new age.
@@ -13,11 +13,10 @@ read the tests in the test file.
 ---------------------- */
 
 class Animal {
-  constructor(name, age, legs, sound) {
+  constructor(name, age, sound) {
     this.name = name;
     this.age = 1;
-    this.legs = 4;
-    this.sound = "tweet!";
+    this.sound = sound;
   }
 
   speak() {

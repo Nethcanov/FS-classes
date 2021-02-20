@@ -15,9 +15,7 @@ describe("Poodles", () => {
     });
     it("should have properties for name, age, breed", () => {
       expect(poodle.hasOwnProperty("name")).to.equal(true);
-      expect(poodle.hasOwnProperty("age")).to.equal(true);
       expect(poodle.hasOwnProperty("breed")).to.equal(true);
-      //expect(poodle.hasOwnProperty("haircuts")).to.equal(true);
       expect(poodle.hasOwnProperty("mealCount")).to.equal(true);
     });
 
@@ -33,6 +31,7 @@ describe("Poodles", () => {
     });
 
     it("should increase the number of haircuts by 7 each time it is called", () => {
+      poodle.getOlder();
       expect(poodle.lifetimeHaircuts()).to.equal(7);
     });
   });

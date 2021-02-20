@@ -17,7 +17,6 @@ describe("Bird", () => {
 
     it("should have properties for name, age, legs, sound, wings and peck", () => {
       expect(bird.hasOwnProperty("name")).to.equal(true); //didn't have everything in here
-      expect(bird.hasOwnProperty("age")).to.equal(true);
       expect(bird.hasOwnProperty("legs")).to.equal(true);
       expect(bird.hasOwnProperty("sound")).to.equal(true);
       expect(bird.hasOwnProperty("wings")).to.equal(true);
@@ -50,9 +49,19 @@ describe("Bird", () => {
     });
 
     it("should increase the peckMirror count when peck increases", () => {
-      bird.peckMirror();
-      bird.peckMirror();
-      expect(bird.peckMirror()).to.equal(3);
+      bird.peckMirror(); //0
+      bird.peckMirror(); //1
+      expect(bird.peckMirror()).to.equal(2);
+    });
+  });
+
+  describe("The totalNailTrims method", () => {
+    it("should exist on the Bird prototype", () => {
+      expect(Bird.prototype.totalNailTrims).to.exist;
+    });
+    it("should increase the nail trim by 2 every year", () => {
+      bird.totalNailTrims(); //
+      expect(bird.totalNailTrims()).to.equal(2);
     });
   });
 });

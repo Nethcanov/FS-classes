@@ -1,14 +1,13 @@
 const Animal = require("./animal");
 
 class Bird extends Animal {
-  constructor(name, age, legs, sound, wings, peck) {
-    super(name, age, legs, sound);
-    this.name = name;
-    this.age = 1;
+  constructor(name, wings, peck) {
+    super(name);
+    this.name = "Fred";
     this.legs = 2;
     this.sound = "tweet!";
     this.wings = 2;
-    this.peck = 1;
+    this.peck = 0;
   }
 
   printInfo() {
@@ -17,6 +16,9 @@ class Bird extends Animal {
 
   peckMirror() {
     return this.peck++;
+  }
+  totalNailTrims() {
+    return this.age * 2;
   }
 }
 

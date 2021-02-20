@@ -6,9 +6,7 @@ let cat = null;
 
 describe("Cat", () => {
   beforeEach(() => {
-    cat = new Cat(); //can change the values here
-    cat.name = "Monkey";
-    cat.favoriteToy = "squeaky mouse";
+    cat = new Cat();
   });
 
   describe("The Cat class", () => {
@@ -16,23 +14,19 @@ describe("Cat", () => {
       expect(isClass(Cat)).to.be.true;
     });
 
-    it("should have properties named name, age, legs, sound, favoriteToy, ornaments", () => {
+    it("should have properties named name, sound, favoriteToy", () => {
       expect(cat.hasOwnProperty("name")).to.equal(true);
-      expect(cat.hasOwnProperty("age")).to.equal(true);
       expect(cat.hasOwnProperty("sound")).to.equal(true);
       expect(cat.hasOwnProperty("favoriteToy")).to.equal(true);
-      expect(cat.hasOwnProperty("attacks")).to.equal(true);
+      expect(cat.hasOwnProperty("ornamentAttacks")).to.equal(true);
     });
 
     it("should have have preset properties for name, sound, legs, favoriteToy and ", () => {
-      expect(cat.name).to.equal("Monkey");
+      expect(cat.name).to.equal("Tiddles");
       expect(cat.sound).to.equal("meow!");
       expect(cat.favoriteToy).to.equal("squeaky mouse");
-      expect(cat.attacks).to.equal(1);
     });
   });
-
-  //no speak method as it is just updating
 
   describe("The getOlder method", () => {
     it("should exist on the Cat prototype", () => {
@@ -52,9 +46,9 @@ describe("Cat", () => {
     });
 
     it("should return an answer when called", () => {
-      cat.attacks = 4;
+      cat.ornamentAttacks = 4;
       expect(cat.buyOrnaments()).to.equal("Move ornaments to somewhere safe!");
-      cat.attacks = 6;
+      cat.ornamentAttacks = 6;
       expect(cat.buyOrnaments()).to.equal("Buy some unbreakable ornaments!");
     });
   });
@@ -66,7 +60,7 @@ describe("Cat", () => {
 
     it("should return a sentence about the favorite toy", () => {
       expect(cat.printToy()).to.equal(
-        "Monkey's favorite toy is a squeaky mouse."
+        "Tiddles's favorite toy is a squeaky mouse."
       );
     });
   });

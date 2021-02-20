@@ -5,7 +5,7 @@ write related tests in the test file.
 
 1. done - Update the sound property to "meow".
 2. done - Create one additional property (your choice).
-3. half done - Update the getOlder method so that it
+3. done - Update the getOlder method so that it
    increases the age by cat years each time
    it is called. Cat years are a bit complex:
    cats are 15 years by age 1, 24 years by age 2,
@@ -18,15 +18,15 @@ write related tests in the test file.
 const Animal = require("./animal");
 
 class Cat extends Animal {
-  constructor(name, age, sound, favoriteToy, attacks) {
-    super(name, age, sound);
-    this.name = name;
-    this.age = 1;
+  constructor(name) {
+    super(name);
+    this.name = "Tiddles";
     this.sound = "meow!";
-    this.favoriteToy = favoriteToy;
-    this.attacks = 1;
+    this.favoriteToy = "squeaky mouse";
+    this.ornamentAttacks = this.ornamentAttacks;
   }
 
+  //it works but not wonderful
   getOlder() {
     if (this.age === 1) {
       return (this.age += 14);
@@ -38,10 +38,10 @@ class Cat extends Animal {
   }
 
   buyOrnaments() {
-    if (this.attacks <= 5) {
+    if (this.ornamentAttacks <= 5) {
       return "Move ornaments to somewhere safe!";
     }
-    if (this.attacks > 5) {
+    if (this.ornamentAttacks > 5) {
       return "Buy some unbreakable ornaments!";
     }
   }

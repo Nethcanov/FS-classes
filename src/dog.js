@@ -20,18 +20,16 @@ fix for the tests to work properly.
 const Animal = require("./animal");
 
 class Dog extends Animal {
-  constructor(name, age, legs, sound, sticks, breed) {
-    super(name, age, legs, sound);
-    this.name = name;
-    this.age = 0;
-    this.legs = 4;
+  constructor(name) {
+    super(name);
     this.sound = "woof!";
     this.sticks = 0;
     this.breed = "breed";
+    this.age = 0;
   }
+
   getOlder() {
-    this.age = this.age + 7;
-    return this.age;
+    return (this.age += 7);
   }
   fetch() {
     return this.sticks++;
