@@ -22,7 +22,6 @@ describe("Cat", () => {
     });
 
     it("should have have preset properties for name, sound, legs, favoriteToy and ", () => {
-      expect(cat.name).to.equal("Tiddles");
       expect(cat.sound).to.equal("meow!");
       expect(cat.favoriteToy).to.equal("squeaky mouse");
     });

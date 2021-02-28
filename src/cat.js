@@ -19,8 +19,7 @@ const Animal = require("./animal");
 
 class Cat extends Animal {
   constructor(name) {
-    super(name);
-    this.name = "Tiddles";
+    super(name, age, sound);
     this.sound = "meow!";
     this.favoriteToy = "squeaky mouse";
     this.ornamentAttacks = this.ornamentAttacks;
